@@ -2,17 +2,44 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Calculadora de Idade em Meses</title>
 </head>
 <body>
-    <h1>Calculadora de Idade em Meses</h1>
+    <header>
+        <h1>Calculadora de Idade em Meses</h1>
     
-    <label for="nascimento">Digite sua data de nascimento:</label>
-    <input type="date" id="nascimento">
-    <button onclick="calcularIdade()">Calcular</button>
+        <label for="nascimento">Digite sua data de nascimento:</label>
+        <input type="date" id="nascimento">
+        <button onclick="calcularIdade()">Calcular</button>
 
-    <p id="resultado" style="color: red;"></p>
+        <p id="resultado" style="color: red;"></p>
+        <p id="testeInput"></p>
+    </header>
+    
 
-    <script src="script.js"></script>
+    <table border="1" id="tabela">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Cálculo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+            <tr>
+                <td>Teste data</td>
+                <td>Teste Cálculo</td>
+                <td>
+                    <button>Excluir</button>
+                    <button>Atualizar</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+   <script src="js/script.js"></script>
+    <script src="js/localStorage.js"></script>
 </body>
 </html>

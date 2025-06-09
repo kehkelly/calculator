@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    --branco-fraco: #f2f4ff;
+    --verde-escuro: #011936;
+    --verde-claro: #35605A;
+}
+
+body {
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--branco-fraco);
+
+    
+}
+
+h1, p, input {
+    color: var(--verde-escuro);
+
+}
+
+input {
+    background-color: var(--branco-fraco);
+    border-color: var(--verde-escuro);
+    color: var(--verde-escuro);
+    font-family: "DM Sans", sans-serif;
+ 
+}
+
+button {
+    background-color: var(--verde-escuro);
+    color: var(--branco-fraco);
+    font-family: "DM Sans", sans-serif;
+}
+
+header {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+    align-items: center;
+}
+
+
+
+table {
+    color: var(--verde-escuro);
+    padding-inline: 15rem;
+    
+    width: 75%;
+    border-color: var(--verde-claro);
+    border-collapse: collapse;
+
+}
+
+td, th {
+    text-align: center; /* Horizontally center text */
+    vertical-align: middle;
+}
