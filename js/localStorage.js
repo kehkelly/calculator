@@ -15,8 +15,8 @@ function tabela() {
         <td>${dataFormatada}</td>
         <td>${calculo}</td>
         <td>
-            <button onClick="excluir()">Excluir</button>
-            <button>Atualizar</button>
+            <button onclick="excluir(this)">Excluir</button>
+            <button onclick="atualizar(this)">Atualizar</button>
         </td>
     
     `;
@@ -52,6 +52,24 @@ function carregarLinhasSalvas() {
         `;
         corpoTabela.appendChild(novaLinhaElemento);
     });
+
+    novaLinhaElemento.innerHTML = `
+    <td>${linha.data}</td>
+    <td>${linha.calculo}</td>
+    <td>
+        <button onclick="excluir(this)">Excluir</button>
+        <button>Atualizar</button>
+    </td>
+`;
+
+novaLinhaElemento.innerHTML = `
+    <td>${linha.data}</td>
+    <td>${linha.calculo}</td>
+    <td>
+        <button onclick="excluir(this)">Excluir</button>
+        <button onclick="atualizar(this)">Atualizar</button>
+    </td>
+`;
 }
 
-carregarLinhasSalvas(); 
+carregarLinhasSalvas();

@@ -59,6 +59,51 @@ function calcularIdade() {
          tabela();
     }
 
-    
+}
 
+function excluir(botao) {
+    const linha = botao.closest("tr"); // Encontra a linha da tabela mais próxima
+    linha.remove(); // Remove a linha da tabela
+
+    // Atualiza o localStorage
+    const corpoTabela = document.getElementById("corpoTabela");
+    const novasLinhas = [];
+
+    for (let i = 0; i < corpoTabela.rows.length; i++) {
+        const row = corpoTabela.rows[i];
+        const data = row.cells[0].textContent;
+        const calculo = row.cells[1].textContent;
+        novasLinhas.push({ data, calculo });
+    }
+
+    localStorage.setItem("linhasSalvas", JSON.stringify(novasLinhas));
+}
+
+function atualizar(botao) {
+    const linha = botao.closest("tr");
+
+    // Pega os valores da linha
+    const data = linha.cells[0].textContent.trim(); // formato dd/mm/aaaa
+    const calculo = linha.cells[1].textContent.trim();
+
+    // Converte data para o formato do input: yyyy-mm-dd
+    const partes = data.split('/');
+    const dataParaInput = `${partes[2]}-${partes[1]}-${partes[0]}`;
+
+    // Preenche o input com a data
+    document.getElementById("nascimento").value = dataParaInput;
+
+    // Remove visualmente
+    linha.remove();
+
+    // Remove do localStorage
+    let linhasSalvas = JSON.parse(localStorage.getItem("linhasSalvas")) || [];
+
+    linhasSalvas = linhasSalvas.filter(item => {
+        const itemData = item.data.trim();
+        const itemCalculo = item.calculo.trim();
+        return !(itemData === data && itemCalculo === calculo);
+    });
+
+    localStorage.setItem("linhasSalvas", JSON.stringify(linhasSalvas));
 }

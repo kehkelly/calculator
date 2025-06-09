@@ -52,7 +52,16 @@ table {
     width: 75%;
     border-color: var(--verde-claro);
     border-collapse: collapse;
+    border: 1px solid var(--verde-escuro)
+}
 
+tr {
+    border: 1px solid var(--verde-claro);
+}
+
+td, thead, th {
+    border-left: 1px solid var(--verde-claro);
+    border-right: 1px solid var(--verde-claro);
 }
 
 td, th {
